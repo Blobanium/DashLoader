@@ -110,9 +110,9 @@ public class DashMultipartBakedModel implements DashObject<MultipartBakedModel, 
 	}
 
 	public static class DazyImpl extends Dazy<MultipartBakedModel> {
-		public final List<Component> components;
+		public final List<dev.notalpha.dashloader.client.model.DashMultipartBakedModel.DazyImpl.Component> components;
 
-		public DazyImpl(List<Component> components) {
+		public DazyImpl(List<dev.notalpha.dashloader.client.model.DashMultipartBakedModel.DazyImpl.Component> components) {
 			this.components = components;
 		}
 
@@ -120,7 +120,7 @@ public class DashMultipartBakedModel implements DashObject<MultipartBakedModel, 
 		protected MultipartBakedModel resolve(Function<SpriteIdentifier, Sprite> spriteLoader) {
 			List<Pair<Predicate<BlockState>, BakedModel>> componentsOut = new ArrayList<>(this.components.size());
 
-			for (Component component : components) {
+			for (dev.notalpha.dashloader.client.model.DashMultipartBakedModel.DazyImpl.Component component : components) {
 				var model = component.model.get(spriteLoader);
 				var selector = component.selector;
 				componentsOut.add(Pair.of(selector, model));

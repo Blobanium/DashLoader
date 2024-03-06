@@ -1,6 +1,5 @@
 package dev.notalpha.dashloader.mixin.accessor;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.client.font.BitmapFont;
 import net.minecraft.client.font.GlyphContainer;
 import net.minecraft.client.texture.NativeImage;

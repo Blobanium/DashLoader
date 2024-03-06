@@ -1,6 +1,5 @@
 package dev.notalpha.dashloader;
 
-import dev.notalpha.dashloader.api.DashEntrypoint;
 import dev.notalpha.dashloader.api.DashModule;
 import dev.notalpha.dashloader.registry.MissingHandler;
 import dev.notalpha.dashloader.api.cache.Cache;
@@ -14,7 +13,6 @@ import dev.notalpha.dashloader.registry.RegistryReaderImpl;
 import dev.notalpha.dashloader.registry.RegistryWriterImpl;
 import dev.notalpha.dashloader.registry.data.StageData;
 import dev.notalpha.taski.builtin.StepTask;
-import net.fabricmc.loader.api.FabricLoader;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +22,6 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
