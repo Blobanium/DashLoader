@@ -85,9 +85,7 @@ public final class RegistryWriterImpl implements RegistryWriter {
 			byte chunkPos = this.target2chunkMappings.getByte(targetClass);
 			if (chunkPos != -1) {
 				var chunk = (ChunkFactory<R, D>) this.chunks[chunkPos];
-				var entry = TrackingRegistryWriterImpl.create(this, writer -> {
-					return chunk.create(object, writer);
-				});
+				var entry = TrackingRegistryWriterImpl.create(this, writer -> chunk.create(object, writer));
 				pointer = chunk.add(entry, this);
 			}
 		}
@@ -96,9 +94,7 @@ public final class RegistryWriterImpl implements RegistryWriter {
 		if (pointer == null) {
 			for (MissingHandler missingHandler : this.missingHandlers) {
 				if (missingHandler.parentClass.isAssignableFrom(targetClass)) {
-					var entry = TrackingRegistryWriterImpl.create(this, writer -> {
-						return (D) missingHandler.func.apply(object, writer);
-					});
+					var entry = TrackingRegistryWriterImpl.create(this, writer -> (D) missingHandler.func.apply(object, writer));
 					if (entry.data != null) {
 						var dashClass = entry.data.getClass();
 						byte chunkPos = this.dash2chunkMappings.getByte(dashClass);

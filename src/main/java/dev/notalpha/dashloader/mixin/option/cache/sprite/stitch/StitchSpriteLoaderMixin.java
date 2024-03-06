@@ -49,9 +49,7 @@ public final class StitchSpriteLoaderMixin {
 			locals = LocalCapture.CAPTURE_FAILSOFT
 	)
 	private void dashloaderStitcherSave(List<SpriteContents> sprites, int mipLevel, Executor executor, CallbackInfoReturnable<SpriteLoader.StitchResult> cir, int i, TextureStitcher<SpriteContents> textureStitcher) {
-		SpriteStitcherModule.STITCHERS_SAVE.visit(CacheStatus.SAVE, map -> {
-			map.add(Pair.of(id, textureStitcher));
-		});
+		SpriteStitcherModule.STITCHERS_SAVE.visit(CacheStatus.SAVE, map -> map.add(Pair.of(id, textureStitcher)));
 	}
 
 	//@Inject(

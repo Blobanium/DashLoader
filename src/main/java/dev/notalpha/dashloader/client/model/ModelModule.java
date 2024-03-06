@@ -91,9 +91,7 @@ public class ModelModule implements DashModule<ModelModule.Data> {
 		});
 
 		var missingModelsRead = new HashMap<BlockState, Identifier>();
-		data.missingModels.forEach((blockState, modelId) -> {
-			missingModelsRead.put(reader.get(blockState), reader.get(modelId));
-		});
+		data.missingModels.forEach((blockState, modelId) -> missingModelsRead.put(reader.get(blockState), reader.get(modelId)));
 
 		DashLoader.LOG.info("Found {} Missing BlockState Models", missingModelsRead.size());
 		MISSING_READ.set(CacheStatus.LOAD, missingModelsRead);

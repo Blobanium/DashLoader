@@ -53,9 +53,7 @@ public final class DashShader implements DashObject<ShaderProgram, ShaderProgram
 		this.format = writer.add(shader.getFormat());
 		this.uniforms = new ArrayList<>();
 		Map<String, GlUniform> loadedUniforms = shaderAccess.getLoadedUniforms();
-		shaderAccess.getUniforms().forEach((glUniform) -> {
-			this.uniforms.add(new DashGlUniform(glUniform, loadedUniforms.containsKey(glUniform.getName())));
-		});
+		shaderAccess.getUniforms().forEach((glUniform) -> this.uniforms.add(new DashGlUniform(glUniform, loadedUniforms.containsKey(glUniform.getName()))));
 		this.samplerNames = shaderAccess.getSamplerNames();
 	}
 

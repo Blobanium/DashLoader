@@ -70,7 +70,7 @@ public final class FactoryBinding<R, D extends DashObject<R, ?>> {
 	// RAW object
 	// EMPTY
 	private enum InvokeType {
-		FULL((methodHandle, args, args2) -> methodHandle.invoke(args, args2), doc -> new Class[]{doc.getTargetClass(), RegistryWriter.class}),
+		@SuppressWarnings("Convert2MethodRef") FULL((methodHandle, args, args2) -> methodHandle.invoke(args, args2), doc -> new Class[]{doc.getTargetClass(), RegistryWriter.class}),
 		WRITER((mh, raw, writer) -> mh.invoke(writer), doc -> new Class[]{RegistryWriter.class}),
 		RAW((mh, raw, writer) -> mh.invoke(raw), doc -> new Class[]{doc.getTargetClass()}),
 		EMPTY((mh, raw, writer) -> mh.invoke(), doc -> new Class[0]);

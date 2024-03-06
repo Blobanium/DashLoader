@@ -56,9 +56,7 @@ public class DashVertexFormat implements DashObject<VertexFormat, VertexFormat> 
 		this.builtin = builtin;
 		if (builtin == -1) {
 			this.elementMap = new HashMap<>();
-			((VertexFormatAccessor) vertexFormat).getElementMap().forEach((s, element) -> {
-				this.elementMap.put(s, new DashVertexFormatElement(element));
-			});
+			((VertexFormatAccessor) vertexFormat).getElementMap().forEach((s, element) -> this.elementMap.put(s, new DashVertexFormatElement(element)));
 		} else {
 			this.elementMap = null;
 		}

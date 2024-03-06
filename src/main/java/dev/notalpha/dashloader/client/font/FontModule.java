@@ -72,9 +72,7 @@ public class FontModule implements DashModule<FontModule.Data> {
 			index.providers.put(reader.get(key), fonts);
 		});
 
-		data.fontMap.allProviders.forEach((value) -> {
-			index.allProviders.add(reader.get(value));
-		});
+		data.fontMap.allProviders.forEach((value) -> index.allProviders.add(reader.get(value)));
 		DATA.set(CacheStatus.LOAD, index);
 	}
 

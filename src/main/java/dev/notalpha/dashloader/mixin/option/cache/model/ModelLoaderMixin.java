@@ -104,37 +104,4 @@ public abstract class ModelLoaderMixin {
 		}
 
 	}
-
-	@Inject(
-			method = "bake",
-			at = @At(
-					value = "TAIL"
-			)
-	)
-	private void debug(BiFunction<Identifier, SpriteIdentifier, Sprite> spriteLoader, CallbackInfo ci) {
-//var models = new HashMap<Identifier, BakedModel>();
-//this.bakedModels.forEach((identifier, bakedModel) -> {
-//	if (
-//			bakedModel.getClass() == BasicBakedModel.class ||
-//			bakedModel.getClass() == MultipartBakedModel.class ||
-//			bakedModel.getClass() == WeightedBakedModel.class ||
-//					bakedModel.getClass() == BuiltinBakedModel.class
-//	) {
-//		return;
-//	}
-//
-//	models.put(identifier, bakedModel);
-//});
-//		System.out.println();
-
-//
-		//String dump = ObjectDumper.dump(new ObjectDumper.Wrapper(models));
-		//try {
-		//	Files.writeString(Path.of("./output." + DashLoaderClient.CACHE.getStatus()), dump);
-		//} catch (IOException e) {
-		//	throw new RuntimeException(e);
-		//}
-	}
-
-
 }
